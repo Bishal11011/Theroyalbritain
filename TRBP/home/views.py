@@ -64,10 +64,10 @@ def poonhill(request,pk):
 	if request.method=='POST':
 		review=ReviewForm(request.POST)
 		if review.is_valid():
-			review.save(commit=False)
-			review.cleaned_data['trip_id']=ponhil.id
+			review = review.save(commit=False)
+			review.trip=ponhil
 			review.save()
-			redirect('Home')
+			redirect('/')
 	reviews=ReviewForm()
 	context={
 		'form':form,
