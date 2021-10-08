@@ -4,7 +4,7 @@ from django.db import models
 from django.shortcuts import redirect, render
 from django.urls.conf import include
 
-from .models import Booking, Festivals,Itinerary,Trips
+from .models import Booking, Festivals,Itinerary,Trips,Pros,Cons
 from.forms import BookingForm
 
 # Create your views here.
@@ -50,11 +50,12 @@ def chakchakur(request):
 def people(request):
 	return render(request,'home/people.html')
 
-def poonhill(request):
-	ponhil=Trips.objects.filter(trip_name='Annapurna Basecamp & Poon Hill Trek')[0]
-	itenerary= Itinerary.objects.filter(trip__trip_name__contains='Annapurna Basecamp & Poon Hill Trek')
-	# pros= Pros.objects.filter(trip__trip_name__contains='Annapurna Basecamp & Poon Hill Trek')
-	# cons= Cons.objects.filter(trip__trip_name__contains='Annapurna Basecamp & Poon Hill Trek')
+def poonhill(request,pk):
+	ponhil=Trips.objects.get(pk =pk)
+	itenerary= Itinerary.objects.filter(trip_id= ponhil.id)
+	pros= Pros.objects.filter(trip_id= ponhil.id)
+	cons= Cons.objects.filter(trip_id= ponhil.id)
+
 	print(itenerary)
 	if request.method=='POST':
 		form=BookingForm(request.POST)
@@ -65,8 +66,8 @@ def poonhill(request):
 		'form':form,
 		'ponhil':ponhil,
 		'itenerary':itenerary,
-		# 'pros':pros,
-		# 'cons':cons
+		'pros':pros,
+		'cons':cons
 	}
 	return render(request,'home/poonhill.html',context)
 
@@ -87,3 +88,10 @@ def gallary(request):
 
 def disclaimer(request):
 	return render(request,'home/disclaimer.html')
+
+def main(request):
+	trip = Trips.objects.all()
+		
+	return {
+		"trip": trip
+	}

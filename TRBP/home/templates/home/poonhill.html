@@ -82,21 +82,16 @@
 			<h1>Include/Exclude</h1>
             <h6 style="font-weight: bold;">OUR SERVICES INCLUDE THE FOLLOWING DURING THE TRIP:</h6>
             <ul style="margin-left: -10px;">
-                <li><i class="fa fa-check" style="color: green; margin-right: 10px;"></i>Airport pickups and drops ina private vehicle</li>
-                <li><i class="fa fa-check"></i>Airport pickups and drops ina private vehicle</li>
-                <li><i class="fa fa-check"></i>Airport pickups and drops ina private vehicle</li>
-                <li><i class="fa fa-check"></i>Airport pickups and drops ina private vehicle</li>
-                <li><i class="fa fa-check"></i>Airport pickups and drops ina private vehicle</li>
+            {%for pros in pros%}
+                <li><i class="fa fa-check" style="color: green; margin-right: 10px;"></i>{{pros.content}}</li>
+            {%endfor%}
             </ul>
             <h6 style="font-weight: bold;">OUR SERVICES EXCLUDE THE FOLLOWING DURING THE TRIP:</h6>
             <hr>
             <ul>
-                <li><i class="fa fa-times" style="color: red; margin-right: 10px;"></i>Airport pickups and drops ina private vehicle</li>
-                <li><i class="fa fa-check"></i>Airport pickups and drops ina private vehicle</li>
-                <li><i class="fa fa-check"></i>Airport pickups and drops ina private vehicle</li>
-                <li><i class="fa fa-check"></i>Airport pickups and drops ina private vehicle</li>
-                <li><i class="fa fa-check"></i>Airport pickups and drops ina private vehicle</li>
-
+            {%for pros in cons%}
+                <li><i class="fa fa-check" style="color: green; margin-right: 10px;"></i>{{pros.content}}</li>
+            {%endfor%}               
             </ul>
 
 		</div>

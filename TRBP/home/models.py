@@ -29,14 +29,15 @@ class Itinerary(models.Model):
 		return title
 
 
-# class Pros:
-# 	content=models.TextField(blank=True,null=True)
-# 	trip=models.ForeignKey(Trips,on_delete=models.CASCADE)
+class Pros(models.Model):
+	content=models.TextField(blank=True,null=True)
+	trip=models.ForeignKey(Trips,related_name="trips_pros",on_delete=models.CASCADE)
 
 
-# class Cons:
-# 	content=models.TextField(blank=True,null=True)
-# 	trip=models.ForeignKey(Trips,on_delete=models.CASCADE)
+class Cons(models.Model):
+	content=models.TextField(blank=True,null=True)
+	trip=models.ForeignKey(Trips,related_name="trips_cons",on_delete=models.CASCADE)
+
 class Booking(models.Model):
 	Choices= {
 		('Mr.','Mr.'),

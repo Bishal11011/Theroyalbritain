@@ -140,7 +140,12 @@
         <div class="content">
           <div class="links">
             <h4>Quick links</h4>
-            <p><a href="{% url 'poonhill' %}">Luxury Poon Hill Trek
+
+            {%for trip in trip%}
+            <p><a href="{%url 'poonhill' trip.id%}">{{trip.trip_name}}
+                        </a></p>
+            {%endfor%}
+            {% comment %} <p><a href="{% url 'poonhill' %}">Luxury Poon Hill Trek
             </a></p>
             <p><a href="{% url 'royal' %}">Annapurna Circuit Trek
             </a></p>
@@ -150,7 +155,7 @@
             </a></p>
             <p><a href="{% url 'howtoget' %}">Everest Gokyo Ri Trek
             </a></p>
-            <p><a href="{% url 'contact' %}">Lower Dolpo Trek</a></p>
+            <p><a href="{% url 'contact' %}">Lower Dolpo Trek</a></p> {% endcomment %}
           </div>
           <div class="links">
             <h4>Quick links</h4>
