@@ -12,3 +12,18 @@ class BookingForm(ModelForm):
         model = Booking
         fields = '__all__'
         widgets = {'arival': DateInput()}
+
+class ReviewForm(ModelForm):
+    class Meta:
+        model = Review
+        fields = '__all__'
+
+
+
+
+
+
+
+
+
+

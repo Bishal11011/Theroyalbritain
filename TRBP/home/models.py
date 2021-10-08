@@ -72,4 +72,17 @@ class Booking(models.Model):
 		return self.full_name
 
 
+class Review(models.Model):
+	email=models.EmailField(null=True,blank=True, max_length=254)
+	name=models.CharField(null=True,blank=True,max_length=15)
+	comment= models.TextField(blank=True)
+	date= models.DateTimeField(auto_now_add=True)
+	publishable=models.BooleanField(default=False,blank=True)
+	trip=models.ForeignKey(Trips,related_name="trips_review",on_delete=models.CASCADE,null=True,blank=True)
+
+
+	def __str__(self):
+		return self.name
+
+
 

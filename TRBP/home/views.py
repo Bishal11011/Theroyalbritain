@@ -4,8 +4,8 @@ from django.db import models
 from django.shortcuts import redirect, render
 from django.urls.conf import include
 
-from .models import Booking, Festivals,Itinerary,Trips,Pros,Cons
-from.forms import BookingForm
+from .models import Booking, Festivals,Itinerary, Review,Trips,Pros,Cons
+from.forms import BookingForm, ReviewForm
 
 # Create your views here.
 
@@ -53,20 +53,29 @@ def people(request):
 def poonhill(request,pk):
 	ponhil=Trips.objects.get(pk =pk)
 	itenerary= Itinerary.objects.filter(trip_id= ponhil.id)
+	reviewss=Review.objects.filter(trip_id= ponhil.id)
 	pros= Pros.objects.filter(trip_id= ponhil.id)
 	cons= Cons.objects.filter(trip_id= ponhil.id)
-
-	print(itenerary)
 	if request.method=='POST':
 		form=BookingForm(request.POST)
 		if form.is_valid():
 			form.save()
 	form=BookingForm()
+	if request.method=='POST':
+		review=ReviewForm(request.POST)
+		if review.is_valid():
+			review.save(commit=False)
+			review.cleaned_data['trip_id']=ponhil.id
+			review.save()
+			redirect('Home')
+	reviews=ReviewForm()
 	context={
 		'form':form,
+		'reviews':reviews,
 		'ponhil':ponhil,
 		'itenerary':itenerary,
 		'pros':pros,
+		'reviewss':reviewss,
 		'cons':cons
 	}
 	return render(request,'home/poonhill.html',context)
