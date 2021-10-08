@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/navbar.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/footer.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/contact.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/royal.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/festival.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/disclaimer.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/modal.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/gallary.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/loshar.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/headertop.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/poonhill.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/sharebtn.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <title>The Royal Britain Peak</title>
+</head>
+<body>
+  <div class="header-top">
+    <div class="header-logo" style="margin-left: -30px;">
+      <a href="{% url 'Home' %} " class="navigation"><img src="{% static 'images/logo.jpeg' %}" width="100" height="90" alt="" srcset="">
+      </a>
+    </div>
+    <div class="header-details">
+      <div class="header-contacts">
+        <div class="header-email" style="margin-left: 30px;" >
+          <i class="fa fa-envelope" aria-hidden="true"></i>
+          <p>info@theroyalbritainpeak.com</p>
+        </div>
+        <div class="header-contact">
+          <p>+9779849800709</p>
+          <i class="fa fa-phone" aria-hidden="true"></i>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <nav class="nav-bar">
+    <ul>
+      <li>
+        <a href="{% url 'Home' %} " class=>Mahakulung</a>
+      </li>
+      <li><a href="{% url 'royal' %}" class="navigation">Royal Britain Peak</a></li>
+       <li>
+          <a href="{% url 'festivals' %}" class="drop">People And Festivals
+          </a>
+          <ul class="dropdowns" style="left: 0;">      
+              <li><a  classname = "drop"  data-scroll href="{% url 'dashain' %}">Dashain</a></li>
+              <li><a  classname = "drop"  data-scroll href="{% url 'tihar' %}">Tihar</a></li>
+              <li><a  classname = "drop"  data-scroll href="{% url 'loshar' %}">Loshar</a></li>
+              <li><a  classname = "drop"  data-scroll href="{% url 'chakchakur' %}">Chakchakur</a></li>
+          </ul>
+       </li>
+       <li><a href="{% url 'howtoget' %}" class="navigation">Getting There</a></li>
+       <li><a href="{% url 'contact' %}" class="navigation">Contact Us</a></li>
+       <li>
+        <a href="{% url 'gallary' %}" class="navigation">Gallery</a>
+
+       </li>
+    </ul>
+    
+ </nav>
+
+    
+    {% block content %}
+      
+    {% endblock content %}
+    <div class="wrapper">
+      <div class="toggle_button">
+        <ul>
+          <li>
+            <a class="share_btn">
+              <span class="text">SHARE</span>
+              <span class="icon"><i class="fa fa-plus"></i></span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/sharer/sharer.php?u={{request.build_absolute_uri}}" class="sm facebook">
+              <span class="icon">
+                <i class="fa fa-facebook-f"></i>
+              </span>
+              <span class="text">Facebook</span>
+            </a>
+          </li>
+          <li>
+            <a href="http://twitter.com/share?text=Check Us Out &url={{request.build_absolute_uri}}" class="sm twitter">
+              <span class="icon">
+                <i class="fa fa-twitter"></i>
+              </span>
+              <span class="text">Twitter</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="sm instagram">
+              <span class="icon">
+                <i class="fa fa-instagram"></i>
+              </span>
+              <span class="text">Intagram</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://pinterest.com/pin/create/button/?url= Pinterest-URL &media= " target="_blank" title="Pinterest Share"><img src="images/pin.png"></a>
+              <span class="icon">
+                <i class="fa fa-pinterest"></i>
+              </span>
+              <span class="text">Pintrenst</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="modal" id="modal">
+      <div class="modal-header">
+        <div class="heading_disclaimer ">Disclaimer</div>
+        <button data-close-button class="close-button">&times;</button>
+      </div>
+      <div class="modal-body discription_disclaimer">
+        Every attempt has been made to guarantee that the content is accurate and reliable. Necessary amendments and revisions will be done if there are any shortages or discrepancies.<br> As a response, we request that you contact us via e-mail, social media, phone, or in person if you have any suggestions for adjustments or improvements. Thank you for your help!    
+      </div>
+    </div>
+    <div id="overlay"></div>
+
+  
+    <div class="footer">
+        <div class="heading">
+          <h2>The Royal Britain Peak Nepal<sup>&trade;</sup></h2>
+        </div>
+        <div class="content">
+          <div class="links">
+            <h4>Quick links</h4>
+            <p><a href="{% url 'poonhill' %}">Luxury Poon Hill Trek
+            </a></p>
+            <p><a href="{% url 'royal' %}">Annapurna Circuit Trek
+            </a></p>
+            <p><a href="{% url 'people' %}">Everest View Trek
+            </a></p>
+            <p><a href="{% url 'festivals' %}">Tamang Heritage Trail with Langtang
+            </a></p>
+            <p><a href="{% url 'howtoget' %}">Everest Gokyo Ri Trek
+            </a></p>
+            <p><a href="{% url 'contact' %}">Lower Dolpo Trek</a></p>
+          </div>
+          <div class="links">
+            <h4>Quick links</h4>
+            <p><a href="{% url 'Home' %}">Mahakulung</a></p>
+            <p><a href="{% url 'royal' %}">Royal Britain Peak</a></p>
+            <p><a href="{% url 'people' %}">The People</a></p>
+            <p><a href="{% url 'festivals' %}">Festivals</a></p>
+            <p><a href="{% url 'howtoget' %}">How to get</a></p>
+            <p><a href="{% url 'contact' %}">Contact Us</a></p>
+            <p><a href="{% url 'gallary' %}">Gallary</a></p>
+            <p><button class="modal-btn" data-modal-target="#modal">Disclaimer</button></p>
+          </div>
+          
+         
+          <div class="details">
+            <h4 class="address">Address</h4>
+            <p style="color: white; font-family: Arial, Helvetica, sans-serif;">
+              महाकुलुङ गाउँपालिका,<br />
+              सोलुखुम्बु
+            </p>
+            <h4 class="mobile">Mobile</h4>
+            <p><a href="#">+9779849800709</a></p>
+            <h4 class="mail">Email</h4>
+            <p><a href="#">abcdef@gmail.com</a></p>
+          </div>
+          <div class="links">
+            <h4>Associated By</h4>
+            <p><a href="https://majestichimalaya.com/">
+              Majestic Himalaya Treks & Expediation Pvt. Ltd
+            </a></p>
+
+            <p><a href="https://www.mahakulungmun.gov.np/">
+              Mahakulung Gaunpalika  
+            </a></p>
+
+            <p>
+              <a href="https://www.emerafoundation.org/">
+                Everest Mera Foundation
+              </a>
+            </p>
+            <p>
+
+            </p>
+            <p>
+
+              <a href="https://trade.welcomenepal.com/">
+                Nepal Tourism Board
+              </a>
+            </p>
+            <p>
+              <a href="https://www.taan.org.np/">
+                Trekking Agencies Association of Nepal
+              </a>
+            </p>
+            <p>
+              <a href="https://p1.gov.np/">
+                Government of Province No. 1
+              </a>
+            </p>
+          </div>
+        </div>
+        <footer style="background-color: skyblue;">
+          <hr />
+          <div class="lef" style="color: black;">
+          © 2021  The Royal Britain Peak Nepal.  All Rights Reserved.  
+
+          </div>
+          <div class="righ" style="display: flex; ">
+            <div class="pow" style="color: black;">
+              Powered By:
+            </div>
+            
+          </div>
+        </footer>
+      </div>
+</body>
+<script type="text/javascript" src="{% static 'js/navbar.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/home.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/modal.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/gallary.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15/dist/smooth-scroll.polyfills.min.js"></script>
+<script>
+	var scroll = new SmoothScroll('a[href*="#"]');
+</script>
+<script async defer src="https://assets.pinterest.com/js/pinit.js"></script>
+<script>
+	var share_btn = document.querySelector(".share_btn");
+	var toggle_button = document.querySelector(".toggle_button");
+	var wrapper = document.querySelector(".wrapper");
+
+	share_btn.addEventListener("mouseenter", function(){
+		toggle_button.classList.add("active");
+  })
+	wrapper.addEventListener("mouseleave", function(){
+		toggle_button.classList.remove("active");
+  })
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+</html>

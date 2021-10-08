@@ -1,0 +1,34 @@
+.about_disclaimer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.desp_disclaimer{
+    width: 70vw;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.heading_disclaimer{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+    letter-spacing: 3px;
+    margin-left: 40%;
+    margin-top: 70px;
+    font-weight: bold;
+
+}
+.discription_disclaimer{
+    margin-top: 50px;   
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+
+
+

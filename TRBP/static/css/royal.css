@@ -1,0 +1,87 @@
+.about_royal{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    height: auto;
+    overflow: hidden;
+    margin-left: 10%;
+    margin-top: 40px;
+
+}
+.desp_royal{
+    width: 50%;
+    height: auto;
+    display: flex;
+    padding: 100px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+
+}
+.heading_royal{
+    margin-top: 100px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    
+}
+.heading_royal{
+    letter-spacing: 3px;
+    margin: auto;
+}
+
+.discription_royal{
+    margin-top: 40px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+.image_royal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+}
+
+.image_royal_image img{
+    width: 600px;
+    height: 300px;
+}
+@media only screen and (max-width: 1260px) {
+
+    .image_royal_image img{
+        width: 350px;
+        height: 170px;
+    }
+}
+
+@media only screen and (max-width: 868px) {
+.discription_royal{
+    width: 100%;
+    text-align: justify;
+}
+.image_royal{
+    width: 100%;
+}
+    .image_royal_image img{
+        width: 500px ;
+        height: 250px ;
+    }
+
+    .about_royal{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+    }
+    .desp_royal{
+        margin-bottom: 20px;
+        width: 100%;
+    }
+    .chooseus{
+        display: flex;
+        flex-direction:column;
+    }
+
+
+}
+

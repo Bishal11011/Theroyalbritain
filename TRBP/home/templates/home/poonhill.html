@@ -1,0 +1,217 @@
+{% extends 'home/main.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+ .container {
+	 max-width: 750px;
+	 min-height: 16em;
+	 border: 1px solid rgba(0, 0, 0, 0.1);
+	 border-radius: 4px;
+     margin-left: 130px;
+}
+ .container--tabs {
+	 list-style: none;
+	 display: flex;
+	 flex-direction: row;
+	 justify-content: flex-start;
+	 align-items: stretch;
+}
+ .container--tabs .tab {
+	 min-height: 2em;
+	 padding: 1em;
+	 box-sizing: border-box;
+	 width: 100%;
+	 text-align: center;
+	 cursor: pointer;
+     background-color: #063B5B;
+	 color: white;
+	 transition: background-color 0.25s;
+}
+ .container--tabs .tab:hover {
+	 background-color: rgba(0, 0, 0, 0.25);
+	 transition: background-color 0.25s;
+	 color: white;
+}
+ .container--tabs .tabs--active {
+	 background-color: #fff;
+	 color: black;
+	 pointer-events: none;
+}
+ .content {
+	 display: none;
+	 padding: 3em;
+     text-align: justify;
+}
+ .content--active {
+	 display: block;
+}
+ h3 {
+	 font-weight: 700;
+}
+ p {
+	 font-weight: 300;
+}
+ .content ul li {
+     list-style: none;
+     padding: 10px;
+ }
+</style>
+<div class="container" style="margin-top: 70px;">
+
+    <h1>{{ponhil.trip_name}}</h1>
+	<ul class="container--tabs">
+		<li class="tab tabs--active">Trip Overview</li>
+		<li class="tab">Itinerary</li>
+		<li class="tab">Include/Exclude</li>
+		<li class="tab">Booknow</li>
+		<li class="tab">Review</li>
+	</ul>
+
+	<div class="container--content">
+		<div class="content content--active">
+			<p style="text-align: justify;">{{ponhil.overview}}</p>
+		</div>
+		<div class="content">
+			<h3>Itinerary</h3>
+            {% for i in itenerary %}
+			<p style="text-align: justify;"><b  style="font-weight: bold;">{{i.day}}</b>{{i.content}}</p>
+            {% endfor %}
+			</div>
+		<div class="content">
+			<h1>Include/Exclude</h1>
+            <h6 style="font-weight: bold;">OUR SERVICES INCLUDE THE FOLLOWING DURING THE TRIP:</h6>
+            <ul style="margin-left: -10px;">
+                <li><i class="fa fa-check" style="color: green; margin-right: 10px;"></i>Airport pickups and drops ina private vehicle</li>
+                <li><i class="fa fa-check"></i>Airport pickups and drops ina private vehicle</li>
+                <li><i class="fa fa-check"></i>Airport pickups and drops ina private vehicle</li>
+                <li><i class="fa fa-check"></i>Airport pickups and drops ina private vehicle</li>
+                <li><i class="fa fa-check"></i>Airport pickups and drops ina private vehicle</li>
+            </ul>
+            <h6 style="font-weight: bold;">OUR SERVICES EXCLUDE THE FOLLOWING DURING THE TRIP:</h6>
+            <hr>
+            <ul>
+                <li><i class="fa fa-times" style="color: red; margin-right: 10px;"></i>Airport pickups and drops ina private vehicle</li>
+                <li><i class="fa fa-check"></i>Airport pickups and drops ina private vehicle</li>
+                <li><i class="fa fa-check"></i>Airport pickups and drops ina private vehicle</li>
+                <li><i class="fa fa-check"></i>Airport pickups and drops ina private vehicle</li>
+                <li><i class="fa fa-check"></i>Airport pickups and drops ina private vehicle</li>
+
+            </ul>
+
+		</div>
+		<div class="content">
+            {% load widget_tweaks %}
+    <form method="POST" action="" enctype='multipart/form-data' class="contact-form">
+			{% csrf_token %}
+            <div style="display: flex;">
+            <div style="display: flex; flex-direction: column;">
+                {{form.trip_name.label}}
+                <div class="form-group col-md-9">
+                    {% render_field form.trip_name class="form-control" %}
+                </div>
+            </div>
+            <div style="display: flex; flex-direction: column;">
+                {{form.salutation.label}}
+                <div class="form-group col-md-12">
+                    {% render_field form.salutation class="form-control" %}
+                </div>
+            </div>
+
+
+        </div>
+            <div style="display: flex;">
+            <div style="display: flex; flex-direction: column;">
+                {{form.full_name.label}}
+                <div class="form-group col-md-9">
+                    {% render_field form.full_name class="form-control" %}
+                </div>
+            </div>
+            <div style="display: flex; flex-direction: column;">
+                {{form.email.label}}
+                <div class="form-group col-md-12">
+                    {% render_field form.email class="form-control" %}
+                </div>
+            </div>
+
+
+        </div>
+            <div style="display: flex;">
+            <div style="display: flex; flex-direction: column;">
+                {{form.telephone.label}}
+                <div class="form-group col-md-9">
+                    {% render_field form.telephone class="form-control" %}
+                </div>
+            </div>
+            <div style="display: flex; flex-direction: column;">
+                {{form.country.label}}
+                <div class="form-group col-md-12">
+                    {% render_field form.country class="form-control" %}
+                </div>
+            </div>
+
+
+        </div>
+            <div style="display: flex;">
+            <div style="display: flex; flex-direction: column;">
+                {{form.numberofperson.label}}
+                <div class="form-group col-md-9">
+                    {% render_field form.numberofperson class="form-control" %}
+                </div>
+            </div>
+            <div style="display: flex; flex-direction: column;">
+                {{form.arival.label}}
+                <div class="form-group col-md-12">
+                    {% render_field form.arival class="form-control" %}
+                </div>
+            </div>
+        </div>
+        {{form.postal_address.label}}
+            <div class="form-group col-md-12">
+                {% render_field form.postal_address class="form-control" %}
+            </div>
+        {{form.pickup.label}}
+            <div class="form-group col-md-12">
+                {% render_field form.pickup class="form-control" %}
+            </div>
+        {{form.pay.label}}
+            <div class="form-group col-md-12">
+                {% render_field form.pay class="form-control" %}
+            </div>
+        {{form.comments.label}}
+            <div class="form-group col-md-12">
+                {% render_field form.comments class="form-control" %}
+            </div>
+            <div class="d-flex justify-content-center mt-3 login_container">
+                <input class=" btn btn-home-border" type="submit" value="Submit">
+              </div>
+            </div>
+
+            </form>
+		</div>
+		<div class="content">
+			<h1>Review</h1>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur doloribus necessitatibus possimus. Sapiente aspernatur neque atque in eum tenetur id!</p>
+		</div>
+	</div>
+</div>
+
+<script>
+    const tabs = document.querySelectorAll(".tab");
+const contents = document.querySelectorAll(".content");
+
+for (let i = 0; i < tabs.length; i++) {
+	tabs[i].addEventListener("click", () => {
+		for (let j = 0; j < contents.length; j++) {
+			contents[j].classList.remove("content--active");
+		}
+		for (let jj = 0; jj < tabs.length; jj++) {
+			tabs[jj].classList.remove("tabs--active");
+		}
+		contents[i].classList.add("content--active");
+		tabs[i].classList.add("tabs--active");
+	});
+}
+
+</script>
+{% endblock %}

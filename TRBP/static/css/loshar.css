@@ -1,0 +1,35 @@
+.carousel-frames {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    /* margin: 10px auto; */
+    overflow: hidden;
+    box-shadow: inset 60px 0px 60px -60px rgb(0, 0, 0),
+      inset -60px 0px 60px -60px rgb(0, 0, 0);
+    background-image: radial-gradient(
+      circle,
+      transparent,
+      transparent 75%,
+      rgba(0, 0, 0, 0.3)
+    );
+    background-color: white;
+  }
+  
+  .carousel-slides {
+    /* position: absolute; */
+    display: flex;
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: multiply;
+
+  }
+  
+  .carousel-slides img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+.heaing-loshar{
+    text-align: center;
+    font-weight: bold;
+}

@@ -1,0 +1,129 @@
+{% extends 'home/main.html' %}
+{% load static %}
+{% block content %}
+<div class="carousel-frame">
+    <div class="carousel-slide">
+        <img src="{% static 'images/a1.jpeg' %}" style="width: 100%;" alt="">
+        <img src="{% static 'images/a2.jpeg' %}" alt="">
+        <img src="{% static 'images/a3.jpeg' %}" alt="">
+        <img src="{% static 'images/a4.jpeg' %}" alt="">
+        <img src="{% static 'images/a5.jpeg' %}" alt="">
+        <img src="{% static 'images/a6.jpeg' %}" alt="">
+        <img src="{% static 'images/a7.jpeg' %}" alt="">
+        <img src="{% static 'images/a8.jpeg' %}" alt="">
+        <img src="{% static 'images/a9.jpeg' %}" alt="">
+    </div>
+    <i class="carousel-prev fa fa-chevron-left"></i>
+    <i class="carousel-next fa fa-chevron-right"></i>
+    <ol class="carousel-dots">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ol>
+  </div>
+  <h1 class="welcome">
+    Welcome to The Royal Britain Peak Nepal
+  </h1>
+      <div class="about_royal">
+        <section class="desp_royal">
+                <div class="heading_royal">
+                    <h1>About The Royal Britain Peak Nepal</h1>
+                </div>
+                <div class="discription_royal" style="display: flex; flex-direction: column;">
+                    <p>
+                        From the meeting taken place on the date of June 22th & 23th of 2021, The Municipal Council, the apex body of Mahakulung Rural Municipality composed of 29 members have declared- ‘The Royal Britain Peak’ in honor of great contribution of New Futures Nepal, UK based charity organization working in Nepal for long time. 
+        The height of the The Royal Britain Peak is approximately... 
+                    </p>
+                    <a href="{% url 'royal' %}" class="btn btn-primary"  style="text-align: center; margin-top: 40px; text-decoration: none; border-radius: 15px 15px; width: 150px; height: 50px; background-color: #F7941D;">See More..</a>
+                </div>
+        </section>
+        <section class="image_royal">
+                <div class="image_royal_image">
+                    <img src="{% static 'images/a1.jpeg' %}" width="500" height="400" alt="" srcset="">
+                </div>
+            </section>
+        </div>
+  <div class="chooseus">
+      <div class="chooseus-heading">
+          <h2> Festivals</h2>
+      </div>
+      <div class="card-items">
+        <a href="{% url 'dashain' %}" style="text-decoration: none; color: #000;">
+        <div class="cards">
+            <img src="{% static 'images/dashain1.jpeg' %}"  style="width:100%; height: 150px;">
+            <div class="containered">
+              <h2><b>Dashain</b></h2>
+              <p>The Nepalese celebrate Dashain, the most important festival of the year, in the month of Kartik (late September and early October)
+                ...</p>
+            </div>
+          </div>
+        </a>
+        <a href="{% url 'tihar' %}" style="text-decoration: none; color: #000;">
+        <div class="cards">
+            <img src="{% static 'images/tihar.jpg' %}"  style="width:100%; height: 150px;">
+            <div class="containered">
+              <h2><b>Tihar</b></h2>
+              <p>
+                Tihar is the five days celebration in Yama Panchak.
+                We couldn't figure out the actual day of Tihar Festival because the Nepal lunar calendar isn't published in advance. It usually  ...</p>
+            </div>
+          </div>
+        </a>
+        <a href="{% url 'loshar' %}" style="text-decoration: none; color: #000;">
+        <div class="cards">
+            <img src="{% static 'images/loshar.jpg' %}"  style="width:100%; height: 150px;">
+            <div class="containered">
+              <h2><b>Loshar</b></h2>
+              <p>Gyalpo Lhosar is a Sherpa new year festival celebrated in Nepal, Tibet, Sikkim, and Darjeeling, India. 
+                The Tibetan New Year is also known as Gyalpo Lhosar, which is widely celebrated by  ...</p>
+            </div>
+          </div>
+        </a>
+        <a href="{% url 'chakchakur' %}" style="text-decoration: none; color: #000;">
+        <div class="cards">
+            <img src="{% static 'images/i04_4.jpeg' %}"  style="width:100%; height: 150px;">
+            <div class="containered">
+              <h2><b>Chakchakur </b></h2>
+              <p>The Chakchakur is New Year greatest festival celebrated by the people of the Kulung community. The area known as Mahakulung area is also taken to be the place of origin of the Kulung ...</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+  </div>
+
+  <div class="about_royal">
+    <section class="desp_royal">
+            <div class="heading_royal">
+                <h1>About Mahakulung</h1>
+            </div>
+            <div class="discription_royal maha">
+                <p>
+                    Mahakulung is a rural municipality out of seven rural municipalities located in Solukhumbu District of Province No. 1 of Nepal. There are a total of 8 municipalities in Solukhumbu in which 1 is urban and 7 are rural.
+According to Ministry of Federal Affairs and Local Developme Mahakulung has an area of 648.05 square kilometres (250.21 sq mi) and the total population of the municipality is 11452 as of Census of Nepal 2011. 
+Bung, Chheskam and Gudel which previously were all separate Village development committee merged to form this new local level body. Fulfilling the requirement of the new Constitution of Nepal 2015, Ministry of Federal Affairs and Local Development replaced all old VDCs and Municipalities into 753 new local level body (Municipality). 
+The rural municipality is divided into total 5 wards and the headquarter of this newly formed rural municipality is situated in Bung. <a class="linksss" href="https://en.wikipedia.org/wiki/Mahakulung_Rural_Municipality" style="color: #F7941D;" target="blank">Source</a>
+    
+                </p>
+            </div>
+    </section>
+
+    <section class="image_royal">
+            <div class="image_royal_image">
+                <img src="{% static 'images/a1.jpeg' %}" width="500" height="400" alt="" srcset="">
+            </div>
+        </section>
+    </div>
+
+
+
+{% endblock content %}
+
+
+

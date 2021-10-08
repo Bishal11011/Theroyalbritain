@@ -1,0 +1,243 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+  }
+  body{
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+
+.carousel-frame {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    margin: 10px auto;
+    overflow: hidden;
+    box-shadow: inset 60px 0px 60px -60px rgb(0, 0, 0),
+      inset -60px 0px 60px -60px rgb(0, 0, 0);
+    background-image: radial-gradient(
+      circle,
+      transparent,
+      transparent 75%,
+      rgba(0, 0, 0, 0.3)
+    );
+    background-color: white;
+  }
+  
+  .carousel-slide {
+    /* position: absolute; */
+    display: flex;
+    
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: multiply;
+
+  }
+  
+  .carousel-slide img {
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  .carousel-prev {
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    margin-top: -15px;
+    z-index: 10;
+    font-size: 30px;
+    color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+  }
+  
+  .carousel-next {
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    margin-top: -15px;
+    z-index: 10;
+    font-size: 30px;
+    color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+  }
+  
+  .carousel-dots {
+    list-style: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 5%;
+    margin: 0 auto;
+    width: max(100px, 15%);
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .carousel-dots li {
+    width: 8px;
+    height: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+  }
+  
+  .carousel-dots .active-dot {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+.about-Mahakulung{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    height: auto;
+    overflow: hidden;
+    margin-left: 5%;
+}
+.about{
+    width: 40%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+.head{
+    margin-top: -100px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+
+}
+.head h1{
+    letter-spacing: 3px;
+
+}
+.image-section{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    height: 100vh;
+    margin-left: 20%;
+    margin-top: 20px;
+}
+.image-title{
+    margin-top:100px;
+    margin-left: 40%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+
+}
+.part1{
+    display: flex;
+    width: 50%;
+    height: auto;
+
+}
+.part2{
+    display: flex;
+    width: 50%;
+    height: auto;
+
+}
+.desp{
+    margin-top: 40px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+
+}
+.linksss{
+    color: red;
+    cursor: pointer;
+}
+
+
+
+ .welcome{
+   margin-left: 25%;
+   margin-top: 10%;
+ }
+
+.chooseus{
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cards {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 250px;
+  height: 350px;
+  margin: 20px;
+     font-family: Georgia, 'Times New Roman', Times, serif;
+
+
+}
+
+/* On mouse-over, add a deeper shadow */
+.cards:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  transform: scale(1.2);
+}
+
+/* Add some padding inside the card container */
+.containered {
+  padding: 2px 16px;
+}
+
+.chooseus-heading{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: bold;
+  margin-left: 40%;
+  padding: 50px;
+}
+.card-items{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+  
+  .chooseus{
+    display: flex;
+    flex-direction: column;
+  }
+  .card-items{
+    display: flex;
+    flex-direction: column;
+  }
+  .about_royal{
+font-size: 10px;  }
+}
+
+
+@media only screen and (max-width: 360px) {
+  .chooseus-heading{
+    font-size: 15px;
+    margin-top: 40px;
+    margin-left: -20px;
+  }
+  
+  .chooseus{
+    display: flex;
+    flex-direction: column;
+  }
+  .card-items{
+    display: flex;
+    flex-direction: column;
+  }
+  .about_royal{
+font-size: 10px;  }
+
+.cards:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  transform: scale(1.1);
+}
+}
+    
